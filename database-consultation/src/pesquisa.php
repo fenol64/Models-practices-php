@@ -1,5 +1,5 @@
 <?php
-    include_once "./src/conexao.php";
+    include_once "./conexao.php";
     
     function pesquisa($number, $con, $pesq){
 

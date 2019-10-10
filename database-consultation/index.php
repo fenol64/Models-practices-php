@@ -26,7 +26,7 @@
                 $con = mysqli_connect("localhost", "root", "@lablemos2019", "consulta");
 
                 $sql2 = "SELECT * FROM alunos";
-                $result2 = mysqli_query($con, $sql2);   
+                $result2 = mysqli_query($conn, $sql2);   
 
                 echo"<table class='w-100 mt-4' border='1'>
                 <tr>
