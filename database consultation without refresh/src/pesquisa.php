@@ -6,7 +6,7 @@
         $sql = "SELECT * FROM alunos";
 
         if ($number = 1) {
-            $sql = $sql . " WHERE nome LIKE '$pesq%'";
+            $sql = $sql . " WHERE nome LIKE '$pesq%' ORDER BY nome";
         }
     
         $result = mysqli_query($con, $sql);   
