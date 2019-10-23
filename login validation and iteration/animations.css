@@ -1,0 +1,22 @@
+@keyframes No {
+
+    25%{
+        transform: translateX(-70px);
+    }
+
+    50%{
+        transform: translateX(70px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes go {
+    100%{
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+}
