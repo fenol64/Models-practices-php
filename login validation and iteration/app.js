@@ -10,7 +10,6 @@ function addClass (type){
     setTimeout(() => {
         containerElement.classList.remove(type);
     }, 1000);
-    document.querySelector('form').reset();
 }
 
 buttonElement.onclick = () => {
@@ -21,11 +20,14 @@ buttonElement.onclick = () => {
 
     if (userInput === "" || passInput === ""){
         addClass("animationNo");
+        document.querySelector('form').reset();
         return false;
     }else if (userInput === "admin" && passInput === "123") {
         addClass("animationgo");
+        return true;
     }else{
         addClass("animationNo");
+        document.querySelector('form').reset();
         return false;
     }
 }

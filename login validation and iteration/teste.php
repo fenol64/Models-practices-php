@@ -1,7 +1,8 @@
 <?php
 
-    $teste = $_POST["username"];
+    $username = $_POST["username"];
+    $pass = $_POST["senha"];
 
-    echo $teste;
-    echo "a";
+    echo "$username <p> $pass";
+
 ?>
