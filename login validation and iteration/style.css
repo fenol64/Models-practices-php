@@ -24,7 +24,7 @@ html, body{
 
 .container{
     width: 12em;
-    height: 13em;
+    height: 9em;
     background: #fff;
     border-radius: 10px;
     font-size: 1.8em;
@@ -36,14 +36,29 @@ html, body{
 
 
 .myinput{
-    border-bottom: 1px solid #836FFF; 
-    margin: 5px 0 15px 0;
-    width: 90%;
+    border: 1px solid #cecece;
+    text-decoration: none; 
+    display: inline-block;
     font-size: .9em;
+    color: #000;
+    outline: none;
+    width: 90%;
+}
+
+span{
+    margin-bottom: 15px;
+    width: 0;
+}
+
+.myinput:focus + span{
+    width: 90%;
+    height: 3px;
+    background: #836FFF;
+    transition: all ease-in-out .5s;
 }
 
 #btn-send{
-    width: 95% ;
+    width: 95%;
     padding: 10px 0;
     border-radius: 5px;
     margin-top: 5px;
