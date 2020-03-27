@@ -1,0 +1,30 @@
+{
+  "name": "nox-0202/projeto",
+  "description": "The faster solution to your problems",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fernando Nascimento Oliveira",
+      "email": "fernandinho.nco@gmail.com",
+      "role": "Developer",
+      "homepage": "https://www.nox-0202.github.io"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config.php"
+    ]
+  },
+  "require": {
+    "coffeecode/datalayer": "1.1.4",
+    "coffeecode/router": "^1.0",
+    "league/plates": "v4.0.0-alpha"
+  }
+}
