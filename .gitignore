@@ -1,5 +1,5 @@
 node_modules/
 vendor/
 .idea/
-Payment-system/source/Config.php
+/Payment-system/source/Config.php
 composer.phar
