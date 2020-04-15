@@ -1,0 +1,30 @@
+{
+    "name": "nox-0202/sellsapi",
+    "description": "PHP restful API for a sells system",
+    "minimum-stability": "stable",
+    "license": "MIT",
+      "authors": [{
+        "name": "Fernando Nascimento Oliveira",
+        "email": "fernandinho.nco@gmail.com",
+        "role": "Developer",
+        "homepage": "https://www.nox-0202.github.io"
+    }],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src/"
+        },
+        "files": [
+            "src/Config.php",
+            "src/Helpers.php"
+        ]
+    },
+    "require": {
+        "ext-json": "*",
+        "coffeecode/datalayer": "1.1.4",
+        "coffeecode/router": "^1.0",
+        "coffeecode/paginator": "^1.0"
+    }
+}
