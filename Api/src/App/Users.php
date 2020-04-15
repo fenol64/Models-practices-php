@@ -4,7 +4,6 @@
 
     use Source\Models\User;
     
-
     class Users
     {
 
@@ -43,5 +42,13 @@
             }
 
             $this->go($this->clients);
+        }
+
+
+        public function error(array $data): void
+        {
+            echo $this->go(array(
+                "erro" => $data["errcode"]
+            ));
         }
     }

@@ -2,7 +2,7 @@
 
     header('Content-Type: application/json');
     
-    define('BASE_URL', 'http://localhost/Projects-php/Api');
+    define('BASE_URL', 'http://localhost/Projects-php/Models-practices-php/Api');
     
     define("DATA_LAYER_CONFIG", [
         "driver" => "mysql",
