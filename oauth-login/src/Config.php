@@ -5,7 +5,7 @@
         "desc" => "mvc oauth login test",
         "domain"=> "test.com",
         "locale" => "pt_BR",
-        "base_url" => "http://localhost/Projects-php/oauth-login"
+        "base_url" => "https://localhost/Projects-php/Models-practices-php/oauth-login"
     ]);
 
 
