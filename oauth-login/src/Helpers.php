@@ -27,19 +27,21 @@ function images (string $imgUrl): string
     return "https://via.placeholder.com/1200x628/0984e3/FFF/?text={$imgUrl}";
 }
 
-
-function flash(string $type = null, string $message = null):?string
+function flash(string $type = null, string $message = null): ?string
 {
-   if ($type && $message) {
-       $_SESSION["flash"] = [
+    if ($type && $message) {
+        $_SESSION["flash"] = [
             "type" => $type,
             "message" => $message
-       ];
-   }
+        ];
+        return null;
+    }
 
     if (!empty($_SESSION["flash"]) && $flash = $_SESSION["flash"]) {
-       return "<div class=\" message {$flash["type"]} \">{$message}</div>";
+        unset($_SESSION["flash"]);
+        return "<div class=\"message {$flash["type"]}\">{$flash["message"]}</div>";
     }
 
     return null;
 }
+

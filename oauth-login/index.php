@@ -20,6 +20,14 @@ $router->get("/senha/{email}/{forget_id}", "Web:reset", "web.reset");
 $router->group(null);
 $router->post("/login", "Auth:login", "auth.login");
 $router->post("/register", "Auth:register", "auth.register");
+$router->post("/forget", "Auth:forget", "auth.forget");
+$router->post("/reset", "Auth:reset", "auth.reset");
+
+
+
+$router->group("me");
+$router->get("/", "Dashboard:home", "dashboard.home");
+$router->get("/sair", "Dashboard:logoff", "dashboard.logoff");
 
 
 
@@ -28,9 +36,6 @@ $router->get("/{errcode}", "Web:error", "web.error");
 
 
 $router->dispatch();
-
-
-
 
 if ($router->error()){
     $router->redirect("web.error", ["errcode" => $router->error()]);

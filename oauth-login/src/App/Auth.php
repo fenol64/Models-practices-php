@@ -1,6 +1,5 @@
 <?php 
 namespace Source\App;
-
 use Source\Models\User;
 
 class Auth extends Controller {
@@ -22,7 +21,6 @@ class Auth extends Controller {
             return;
         }
 
-
         $user = new User();
         $user->first_name = $data["first_name"];
         $user->last_name = $data["last_name"];
@@ -40,7 +38,35 @@ class Auth extends Controller {
         $_SESSION["user"] = $user->id;
 
         echo $this->ajax("redirect", [
-            "url" => $this->router->route("app.home")
+            "url" => $this->router->route("dashboard.home")
         ]);
+    }
+
+
+    public function login($data)
+    {
+        $email = filter_var($data["email"], FILTER_VALIDATE_EMAIL);
+        $pass = filter_var($data["passwd"], FILTER_DEFAULT);
+
+        if (!$email || !$pass) {
+            echo $this->ajax("message", [
+                "type" => "error",
+                "message" => "Informe um e-mail e senha para logar"
+            ]);
+            return;
+        }
+
+        $user = (new User)->find("email = :e", "e={$email}")->fetch();
+        if (!$user || !password_verify($pass, $user->passwd)) {
+            echo $this->ajax("message", [
+                "type" => "error",
+                "message" => "Email ou senha informados são inválidos"
+            ]);
+            return;
+        }
+
+        $_SESSION["user"] = $user->id;
+
+        echo $this->ajax("redirect", ["url" => $this->router->route("dashboard.home")]);
     }
 }

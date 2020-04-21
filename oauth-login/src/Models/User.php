@@ -55,13 +55,13 @@ class User extends DataLayer
         $userByEmail = null;
 
         if (!$this->id) {
-            $userByEmail = $this->find("email = :email", "email={$this->email}")->count;
+            $userByEmail = $this->find("email = :email", "email={$this->email}")->count();
         } else {
-            $userByEmail = $this->find("email = :email AND id != :id", "email={$this->email}&id={$this->id}")->count;
+            $userByEmail = $this->find("email = :email AND id != :id", "email={$this->email}&id={$this->id}")->count();
         }
 
         if ($userByEmail) {
-            $this->fail = new Exception("O e-mail informado já está em uso.");
+            $this->fail = new Exception("O e-mail informado já está em uso");
             return false;
         }
 
