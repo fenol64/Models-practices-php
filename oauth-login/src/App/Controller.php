@@ -3,6 +3,7 @@
 namespace Source\App;
 
 use CoffeeCode\Optimizer\Optimizer;
+use CoffeeCode\Router\Router;
 use League\Plates\Engine;
 
 abstract class Controller {

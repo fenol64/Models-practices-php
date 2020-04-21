@@ -16,6 +16,13 @@ $router->get("/cadastrar", "Web:register", "web.register");
 $router->get("/recuperar", "Web:forget", "web.forget");
 $router->get("/senha/{email}/{forget_id}", "Web:reset", "web.reset");
 
+
+$router->group(null);
+$router->post("/login", "Auth:login", "auth.login");
+$router->post("/register", "Auth:register", "auth.register");
+
+
+
 $router->group('ooops');
 $router->get("/{errcode}", "Web:error", "web.error");
 
@@ -23,8 +30,10 @@ $router->get("/{errcode}", "Web:error", "web.error");
 $router->dispatch();
 
 
+
+
 if ($router->error()){
     $router->redirect("web.error", ["errcode" => $router->error()]);
-}
+} 
 
 ob_end_flush();
