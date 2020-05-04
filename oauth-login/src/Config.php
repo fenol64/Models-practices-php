@@ -50,7 +50,14 @@
     *   MAIL CONNECT
     */
 
-    define('MAIL', []);
+    define('MAIL', [
+        "host" => "smtp.sendgrid.net",
+        "port" => "587",
+        "user" => "apikey",
+        "passwd" => "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",
+        "from_name" => "Fernando Olieira",
+        "from_email" => "fernandinho.nco@gmail.com"
+    ]);
 
     /*
     *   FACEBOOK OAUTH | social login

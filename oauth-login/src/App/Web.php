@@ -1,10 +1,14 @@
-<?php 
+<?php
 
 namespace Source\App;
 
-class Web extends Controller {
+use Source\Models\User;
 
-    public function __construct($router) {
+class Web extends Controller
+{
+
+    public function __construct($router)
+    {
 
         parent::__construct($router);
 
@@ -21,13 +25,12 @@ class Web extends Controller {
             "Faça o login no " . site("name"),
             site("desc"),
             $this->router->route("web.login"),
-            images("Login") 
+            images("Login")
         )->render();
-        
+
         echo $this->view->render("theme/login", [
             "head" => $head
         ]);
-    
     }
 
     public function register(): void
@@ -36,14 +39,14 @@ class Web extends Controller {
             "Crie seua conta no " . site("name"),
             site("desc"),
             $this->router->route("web.register"),
-            images("register") 
+            images("register")
         )->render();
 
         $formUser = new \stdClass();
         $formUser->first_name = null;
         $formUser->last_name = null;
         $formUser->email = null;
-        
+
         echo $this->view->render("theme/register", [
             "head" => $head,
             "user" => $formUser
@@ -57,7 +60,7 @@ class Web extends Controller {
             "recupere sua senha | " . site("name"),
             site("desc"),
             $this->router->route("web.forget"),
-            images("forget") 
+            images("forget")
         )->render();
 
         echo $this->view->render("theme/forget", [
@@ -65,14 +68,43 @@ class Web extends Controller {
         ]);
     }
 
+    
+    /**
+     * reset
+     *
+     * @param  mixed $data
+     * @return void
+     */
+
 
     public function reset($data): void
     {
+
+        if (empty($_SESSION["forget"])) {
+            flash("info", "Informe seu Email para recuperar");
+            $this->router->redirect("web.forget");
+        }
+
+        $email = filter_var($data["email"], FILTER_VALIDATE_EMAIL);
+        $forget = filter_var($data["forget"], FILTER_DEFAULT);
+
+        if (empty($email || empty($forget))) {
+            flash("error", "Não foi possível recuperar, tente novamente");
+            $this->router->redirect("web.forget");
+        }
+
+        $user = (new User)->find("email = :e and forget = :f", "e={$email}&f={$forget}")->fetch();
+
+        if (!$user) {
+            flash("error", "Não foi possível recuperar, tente novamente");
+            $this->router->redirect("web.forget");
+        }
+
         $head = $this->seo->optimize(
             "Crie uma nova senha | " . site("name"),
             site("desc"),
             $this->router->route("web.reset"),
-            images("Reset") 
+            images("Reset")
         )->render();
 
         echo $this->view->render("theme/reset", [
@@ -83,21 +115,19 @@ class Web extends Controller {
 
     public function error($data): void
     {
-       $error = filter_var($data["errcode"], FILTER_VALIDATE_INT);
+        $error = filter_var($data["errcode"], FILTER_VALIDATE_INT);
 
 
-       $head = $this->seo->optimize(
+        $head = $this->seo->optimize(
             "oops {$error} | " . site("name"),
             site("desc"),
             $this->router->route("web.error"),
-            images($error) 
+            images($error)
         )->render();
 
         echo $this->view->render("theme/error", [
             "head" => $head,
             "error" => $error
         ]);
-
     }
-
 }

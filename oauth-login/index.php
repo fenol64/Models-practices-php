@@ -30,6 +30,11 @@ $router->post("/register", "Auth:register", "auth.register");
 $router->post("/forget", "Auth:forget", "auth.forget");
 $router->post("/reset", "Auth:reset", "auth.reset");
 
+/*
+ * SOCIAL
+ */
+
+ 
 
 /*
  * PROFILE
