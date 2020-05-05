@@ -42,10 +42,20 @@ class Web extends Controller
             images("register")
         )->render();
 
+        $social_user = (!empty($_SESSION["facebook_auth"]) ? unserialize($_SESSION["facebook_auth"]) : 
+                    (!empty($_SESSION["google_auth"]) ? unserialize($_SESSION["google_auth"]) : null));
+
         $formUser = new \stdClass();
-        $formUser->first_name = null;
-        $formUser->last_name = null;
-        $formUser->email = null;
+
+        if ($social_user) {
+            $formUser->first_name = $social_user->getFirstName();
+            $formUser->last_name = $social_user->getLastName();
+            $formUser->email = $social_user->getEmail();
+        } else {
+            $formUser->first_name = null;
+            $formUser->last_name = null;
+            $formUser->email = null;
+        }
 
         echo $this->view->render("theme/register", [
             "head" => $head,

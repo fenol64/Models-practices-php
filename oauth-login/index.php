@@ -10,7 +10,6 @@ use CoffeeCode\Router\Router;
 $router = new Router(site());
 $router->namespace('Source\App');
 
-
 /*
  * WEB
  */
@@ -34,7 +33,9 @@ $router->post("/reset", "Auth:reset", "auth.reset");
  * SOCIAL
  */
 
- 
+$router->group(null);
+$router->get("/facebook", "Auth:facebook", "auth.facebook");
+$router->get("/google", "Auth:google", "auth.google");
 
 /*
  * PROFILE

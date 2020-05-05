@@ -63,13 +63,22 @@
     *   FACEBOOK OAUTH | social login
     */
 
-    define('FACEBOOK_LOGIN', []);
+    define('FACEBOOK_LOGIN', [
+        "clientId" => "923770348061346",
+        "clientSecret" => "fbddfac892f8b608943b46054d26fd52",
+        "redirectUri" => SITE["base_url"] . "/facebook",
+        "graphApiVersion" => "v6.0"
+    ]);
 
     /*
     *   GOOGLE OAUTH | social login
     */
 
-    define('GOOGLE_LOGIN', []);
+    define('GOOGLE_LOGIN', [
+        "clientId" => "689804817498-o0bapdpr4k736q7ftb6b0lvet80u9cqa.apps.googleusercontent.com",
+        "clientSecret" => "d_xHTxgPDdl2C97I8eq2o3p2",
+        "redirectUri" => SITE["base_url"] . "/google"
+    ]);
     
 
     
