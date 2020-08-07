@@ -1,0 +1,9 @@
+{
+    "name": "test/test",
+    "description": "test to apps",
+
+    "require": {
+        "mike42/escpos-php": "v3.0"
+    }
+}
+
