@@ -5,7 +5,7 @@
         "desc" => "mvc oauth login test",
         "domain"=> "test.com",
         "locale" => "pt_BR",
-        "base_url" => "https://localhost/Projects-php/Models-practices-php/oauth-login"
+        "base_url" => "https://localhost/Projects/Models-practices-php/oauth-login"
     ]);
 
 
@@ -51,11 +51,11 @@
     */
 
     define('MAIL', [
-        "host" => "smtp.sendgrid.net",
+        "host" => "smtp.gmail.com",
         "port" => "587",
-        "user" => "apikey",
-        "passwd" => "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",
-        "from_name" => "Fernando Olieira",
+        "user" => "fernandinho.nco@gmail.com",
+        "passwd" => "03F18L19F",
+        "from_name" => "Fernando Oliveira",
         "from_email" => "fernandinho.nco@gmail.com"
     ]);
 
@@ -76,7 +76,7 @@
 
     define('GOOGLE_LOGIN', [
         "clientId" => "689804817498-o0bapdpr4k736q7ftb6b0lvet80u9cqa.apps.googleusercontent.com",
-        "clientSecret" => "d_xHTxgPDdl2C97I8eq2o3p2",
+        "clientSecret" => "qSlvTrBtS_6PqJSWSf0skpqc",
         "redirectUri" => SITE["base_url"] . "/google"
     ]);
     

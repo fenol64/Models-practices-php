@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <?= $head; ?>
-    <link rel="stylesheet" href="<?= asset("/Bundle.min.css"); ?>"/>
+    <link rel="stylesheet" href="<?= asset("Bundle.min.css"); ?>"/>
     <link rel="icon" type="image/png" href="<?= asset("/images/favicon.png"); ?>"/>
 </head>
 <body>
