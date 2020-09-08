@@ -1,0 +1,26 @@
+{
+    "name": "nox-0202/authlogin",
+    "description": "Uma peça de login para seu sistema",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Nascimento Oliveira",
+            "email": "fernandinho.nco@gmail.com",
+            "role": "Developer",
+            "homepage": "http://nox-0202.github.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src"
+        },
+        "files": [
+            "example/Calendar.php"
+        ]
+    },
+    "require": {
+        "ext-json": "*",
+        "coffeecode/datalayer": "1.1.4"
+    }
+}

@@ -1,0 +1,25 @@
+main {
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 95vw;
+    margin-left: calc(95vw - 100vw + 70px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+}
+
+article {
+    padding: 0 20px;
+    border: 1px solid #000;
+}
+
