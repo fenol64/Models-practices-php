@@ -1,15 +1,35 @@
 main {
     max-width: 90vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .box {
-    width: 95vw;
-    margin-left: calc(95vw - 100vw + 70px);
+    width: 336.93px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+article {
+    padding: 0 5px;
+    border: 1px solid #000;
+}
+
+.mes {
+    width: 336.93px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box_content {
+    width: 336.93px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -18,8 +38,7 @@ main {
     overflow: hidden;
 }
 
-article {
-    padding: 0 20px;
-    border: 1px solid #000;
+.active {
+    display: flex !important;
 }
 
