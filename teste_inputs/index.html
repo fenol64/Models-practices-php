@@ -7,12 +7,15 @@
 </head>
 <body>
     <button id="add">add</button>
-    <form action="./recebe.php" method="post">
+    <div action="./recebe.php" method="post">
         <div id="inputs">
-            <input placeholder="Digite sua especialidade" name="especialidade0" class="input_especialidade">
+            <input type="text" placeholder="Digite sua especialidade" name="especialidade0" class="text_especialidade">
+            <input type="number" name="price0" class="price_especialidade">
         </div>
-        <button type="submit"> submit </button>
-    </form>
+        <button id="send"> submit </button>
+    </div>
 </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./js/script.js"></script>
 </html>
+
